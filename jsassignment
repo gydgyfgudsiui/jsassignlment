@@ -1,0 +1,40 @@
+// Create an array to store our precious NFTs
+const nftCollection = [];
+
+// Mint a new NFT with provided metadata and store it
+function mintNFT(_name, _power, _health, _ability) {
+    const nftMetadata = {
+        Name: _name,
+        Power: _power,
+        Health: _health,
+        Ability: _ability
+    };
+    nftCollection.push(nftMetadata);
+    console.log(`🪙 Minted: ${_name}`);
+}
+
+// List all our valuable NFTs along with their details
+function listNFTs() {
+    console.log("📜 Listing NFTs:");
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log(`\nName    : ${nftCollection[i].Name}`);
+        console.log(`Power   : ${nftCollection[i].Power}`);
+        console.log(`Health  : ${nftCollection[i].Health}`);
+        console.log(`Ability : ${nftCollection[i].Ability}`);
+    }
+}
+
+// Get the total number of NFTs we've minted
+function getTotalSupply() {
+    console.log(`💰 Total Minted NFTs: ${nftCollection.length}`);
+}
+
+// Mint some unique NFTs
+mintNFT("Fire Dragon", 450, 40, "Fire Breath");
+mintNFT("Ice Queen", 320, 35, "Frost Nova");
+mintNFT("Telepath", 220, 30, "Mind Control");
+mintNFT("Stormcaller", 380, 45, "Lightning Strike");
+
+// Display our precious NFTs and their total count
+listNFTs();
+getTotalSupply();
